@@ -1,0 +1,19 @@
+name: "Render Deployer"
+author: "OneHox"
+description: "Trigger deploy on render.com"
+inputs:
+  serviceId: # YourApp > Settings > Deploy Section > Deploy Hook
+    description: "The id of the service example: https://api.render.com/v1/services/{serviceId}/deploys"
+    required: true
+  bearer: # Profile > Settings > API Keys
+    description: "Authorization token for your profile"
+    required: true
+outputs:
+  response:
+    description: "Response text from render api"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+branding:
+  icon: upload-cloud
+  color: gray-dark
